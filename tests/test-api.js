@@ -1,9 +1,9 @@
 import request from "supertest";
-import app from "../index.js"; // import the app directly
+import app from "../index.js"; // now points to index.js
 
 async function runTests() {
   try {
-    // Test health check
+    // Health check
     const res1 = await request(app).get("/");
     if (res1.status !== 200) throw new Error("Health check failed");
 
