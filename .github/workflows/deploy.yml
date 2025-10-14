@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run API tests
+        run: npm run test:api
+
       # Step 5: Deploy your app to Railway using your secret token
       - name: Deploy to Railway
         env:
