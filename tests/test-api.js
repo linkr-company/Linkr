@@ -11,7 +11,7 @@ async function runTests() {
     const res2 = await request(app)
       .post("/auth/register")
       .send({
-        name: "Test User",
+        name: "Test User 1",
         email: "testuser@example.com",
         password: "password123",
         profile_picture: ""
