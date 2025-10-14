@@ -1,25 +1,19 @@
-const express = require('express');
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import authRoutes from "./routes/auth.js";
+
+dotenv.config();
 const app = express();
-const port = process.env.PORT || 3000;
 
-app.get('/hello', (req, res) => {
-  res.json({ message: 'Hello, Dhanshree' });
-});
+app.use(cors());
+app.use(express.json());
 
-// Add two numbers from the URL
-app.get('/add/:num1/:num2', (req, res) => {
-  const num1 = parseFloat(req.params.num1);
-  const num2 = parseFloat(req.params.num2);
+// auth routes
+app.use("/auth", authRoutes);
 
-  if (isNaN(num1) || isNaN(num2)) {
-    return res.status(400).json({ error: 'Both parameters must be numbers' });
-  }
+// test route
+app.get("/", (req, res) => res.send("Linkr API Running ✅"));
 
-  const result = num1 + num2;
-  res.json({ result });
-});
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
