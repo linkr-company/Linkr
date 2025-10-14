@@ -8,8 +8,8 @@
     "test:api": "node ./tests/test-api.js",
     "start": "node index.js"
   },
-   "dependencies": {
-     "@supabase/supabase-js": "^2.0.0",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -19,5 +19,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "supertest": "^7.1.4"
+  }
 }
