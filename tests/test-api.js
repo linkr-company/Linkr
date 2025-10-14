@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../server.js"; // import the app directly
+import app from "../index.js"; // import the app directly
 
 async function runTests() {
   try {
