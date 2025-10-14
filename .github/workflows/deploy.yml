@@ -28,13 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Setup environment variables
-        run: |
-          echo "SUPABASE_URL=${{ secrets.SUPABASE_URL }}" >> .env
-          echo "SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}" >> .env
-          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
-          echo "PORT=3000" >> .env  # default port, can be overridden by Railway
-
       # Step 5: Deploy your app to Railway using your secret token
       - name: Deploy to Railway
         env:
