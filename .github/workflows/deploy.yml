@@ -35,7 +35,14 @@ jobs:
         run: sleep 5
 
       - name: Run API tests
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          NODE_ENV: test
         run: npm run test:api
+
 
       # Step 5: Deploy your app to Railway using your secret token
       - name: Deploy to Railway
