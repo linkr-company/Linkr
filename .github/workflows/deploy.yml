@@ -41,7 +41,7 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           NODE_ENV: test
-        run: npm run test:api
+          run: npm run test:api
 
 
       # Step 5: Deploy your app to Railway using your secret token
