@@ -11,8 +11,8 @@ async function runTests() {
     const res2 = await request(app)
       .post("/auth/register")
       .send({
-        name: "Test User 4",
-        email: "testuser4@example.com",
+        name: "Test User 6",
+        email: "testuser6@example.com",
         password: "password123",
         profile_picture: ""
       });
@@ -22,7 +22,7 @@ async function runTests() {
     const res3 = await request(app)
       .post("/auth/login")
       .send({
-        email: "testuser4@example.com",
+        email: "testuser6@example.com",
         password: "password123"
       });
     if (res3.status !== 200) throw new Error("Login failed");
